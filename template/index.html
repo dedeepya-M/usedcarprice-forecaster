@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>sell car</title>
+    <link rel="stylesheet" href="../static/car.css">
+
+</head>
+
+<body >
+<div class="login">
+    <h1>Used car price forecaster</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+    <div class = "b"><b>Kilometers_Driven:</b> <input type="number" step="any" name="Kilometers_Driven" placeholder="give km" required="required"></div>
+    <br><br><b><div class = "b">Mileage:</b><input type="number" step="any" name="Mileage" placeholder="in kmpl" required="required"></div>
+        <br><br><b><div class = "b">Engine:</b><input type="number" step="any" name="Engine" placeholder="in cc" required="required"></div>
+        <br><br><b><div class = "b">Power:</b><input type="number" step="any" name="Power" placeholder="in bhp" required="required"></div>
+        <br><br><b><div class = "b">Seats:</b><input type="number" step="any" name="Seats" placeholder="number of seats" required="required"></div>
+        <br><br><b><div class = "b">year of purchase:</b><input type="number"  name="pyear" placeholder="yyyy" required="required"></div>
+      <br><br><br><b><div class = "b">Fuel Type:</b> <select id="Fuel" name="Fuel_Type"></div>
+            <option value="Diesel">Diesel</option>
+            <option value="Electric">Electric</option>
+            <option value="LPG">LPG</option>
+            <option value="Petrol">Petrol</option>
+            <option value="CNG">CNG</option>
+        </select>
+        <br><br><br><b><div class = "b"> Transmission:</b> <select id="Transmission" name="Transmission_Type"></div>
+            <option value="Manual">Manual</option>
+            <option value="Automatic">Automatic</option>
+        </select>
+        
+        <br><br><br><b><div class = "b"> Owner:</b> <select id="Owner" name="Owner"></div>
+            <option value="First">First</option>
+            <option value="Second">Second</option>
+            <option value="Third">Third</option>
+            <option value="Fourth&Above">Fourth&Above</option>
+        </select>
+     <br><br><br><button>predict</button>
+     
+</form>
+<br><br>
+
+<b>{{ prediction_text }}</b>
+    </div>
+</body>
+</html>
